@@ -1,8 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <Version>1.0.0.0</Version>
+        <!-- The id on nuget.org is oalt's, and what is published there is from March
+             2023 - before the drag-and-drop and error-list models that our components use.
+             So this goes out under a name of its own. Library, author and copyright stay
+             his. -->
+        <PackageId>Synorvia.UI.DataModels</PackageId>
+        <Version>2.1.0.0</Version>
         <Authors>MDD4All.de</Authors>
         <Company>MDD4All.de</Company>
         <Description>Data models for UI components</Description>
@@ -13,6 +18,17 @@
         <SignAssembly>True</SignAssembly>
         <AssemblyOriginatorKeyFile>MDD4All_Github.snk</AssemblyOriginatorKeyFile>
     </PropertyGroup>
+
+    <PropertyGroup>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+    </ItemGroup>
 
     <ItemGroup>
         <None Include="Nuget.md">
